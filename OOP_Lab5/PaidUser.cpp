@@ -10,6 +10,12 @@ void PaidUser::SetPosts(Post* posts, int postsCount)
 	_postsCount = postsCount;
 }
 
+//User* PaidUser::Login(User** users, int usersCount, string enteredLogin, string enteredPassword)
+//{
+//
+//	return nullptr;
+//}
+
 void PaidUser::GetPosts()
 {
 	cout << "Title: "<< _posts->GetTitle() << endl;

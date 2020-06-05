@@ -139,6 +139,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Authorization.cpp" />
+    <ClCompile Include="CheckInput.cpp" />
     <ClCompile Include="OOP_Lab5.cpp" />
     <ClCompile Include="PaidUser.cpp" />
     <ClCompile Include="Person.cpp" />
@@ -148,6 +150,8 @@
     <ClCompile Include="User.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Authorization.h" />
+    <ClInclude Include="CheckInput.h" />
     <ClInclude Include="PaidUser.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="Post.h" />

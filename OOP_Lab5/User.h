@@ -16,6 +16,7 @@ public:
 	int GetId();  
 	string GetLogin();  
 	string GetPassword();
+	virtual User* Login(User** users, int usersCount, string enteredLogin, string enteredPassword);
 
 	User(int id, string login, string password);  
 	bool IsCorrectPassword(string password);

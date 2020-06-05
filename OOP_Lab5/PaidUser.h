@@ -13,6 +13,8 @@ class PaidUser : public User
 public:  
 	void SetPosts(Post* posts, int postsCount);
 
+	//User* Login(User** users, int usersCount, string enteredLogin, string enteredPassword) override;
+
 	void GetPosts();  
 	int GetPostsCount();
 	  
