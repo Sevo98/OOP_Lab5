@@ -140,21 +140,30 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Authorization.cpp" />
+    <ClCompile Include="CertificateDiscount.cpp" />
     <ClCompile Include="CheckInput.cpp" />
+    <ClCompile Include="DiscountBase.cpp" />
     <ClCompile Include="OOP_Lab5.cpp" />
     <ClCompile Include="PaidUser.cpp" />
+    <ClCompile Include="PercentDiscount.cpp" />
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="Post.cpp" />
+    <ClCompile Include="Product.cpp" />
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="Teacher.cpp" />
     <ClCompile Include="User.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Authorization.h" />
+    <ClInclude Include="CategoryType.h" />
+    <ClInclude Include="CertificateDiscount.h" />
     <ClInclude Include="CheckInput.h" />
+    <ClInclude Include="DiscountBase.h" />
     <ClInclude Include="PaidUser.h" />
+    <ClInclude Include="PercentDiscount.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="Post.h" />
+    <ClInclude Include="Product.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="Teacher.h" />
     <ClInclude Include="User.h" />

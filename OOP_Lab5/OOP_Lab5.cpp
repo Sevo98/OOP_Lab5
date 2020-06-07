@@ -5,9 +5,14 @@
 #include "Teacher.h"
 #include "Post.h"
 #include "PaidUser.h"
+#include "Product.h"
+#include "DiscountBase.h"
+#include "PercentDiscount.h"
+#include "CertificateDiscount.h"
 using namespace std;
 
 void ShowName(Person* person);
+void ShowCheckWithDiscount(DiscountBase* discount, Product* products, int productsCount);
 
 int main()
 {
@@ -20,6 +25,7 @@ int main()
 		cout << "Введите от 1 до 4" << endl;
 		cout << "1. Наследование" << endl;
 		cout << "2. Рефакторинг с выделением базового класса" << endl;
+		cout << "3. Полиморфизм" << endl;
 		CheckInput::CheckInputInt(&number);
 		switch (number)
 		{
@@ -106,6 +112,30 @@ int main()
 			//delete checkLoginUsers;
 
 		} break;
+
+		//Полиморфизм
+		case 3:
+			{
+			const int productsCount = 4;
+			Product products[productsCount];
+			products[0] = Product("Курица", 250, meat);
+			products[1] = Product("Кефир", 55, milk_products);
+			products[2] = Product("Domestos", 300, household_chemicals);
+			products[3] = Product("Молоко", 80, milk_products);
+
+			PercentDiscount* percentDicsount = new PercentDiscount(50, milk_products);
+			CertificateDiscount* certificate = new CertificateDiscount(500, household_chemicals);
+
+			DiscountBase* arrDiscounts[2];
+			arrDiscounts[0] = percentDicsount;
+			arrDiscounts[1] = certificate;
+
+			ShowCheckWithDiscount(arrDiscounts[1], products, productsCount);
+
+			/*delete percentDicsount;
+			delete certificate;
+			delete[] arrDiscounts;*/
+			}
 		}
 	}
 	
@@ -114,4 +144,29 @@ int main()
 void ShowName(Person* person)
 {
 	person->SetPerson();
+}
+
+void ShowCheckWithDiscount(DiscountBase* discount, Product* products, int productsCount)
+{
+	double allPrice = 0;
+	for (int i = 0; i < productsCount; i++)
+	{
+		allPrice = allPrice + products[i].GetPrice();
+	}
+
+	for (int i = 0; i < productsCount; i++)
+	{
+		cout << "Старая цена товара " << products[i].GetName() << ": " << products[i].GetPrice() << endl;
+		products[i].SetPrice(discount->Calculate(&products[i]));
+		cout << "Цена при применении скидки: " << products[i].GetPrice() << endl;
+	}
+
+	double allPriceWithDiscount = 0;
+	for (int i = 0; i < productsCount; i++)
+	{
+		allPriceWithDiscount = allPriceWithDiscount + products[i].GetPrice();
+	}
+	cout << "Цена всего списка товаров без учета скидки: " << allPrice << endl;
+	cout << "Цена всего списка товаров с учетом скидки: " << allPriceWithDiscount << endl;
+	cout << "Скидка составила: " << allPrice - allPriceWithDiscount << endl;
 }
