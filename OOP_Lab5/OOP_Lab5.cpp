@@ -106,9 +106,26 @@ int main()
 			PaidUser paidUser = PaidUser(5, "Имя", "пароль");
 			User poorUser = User(7, "Николай", "пасс");
 
-			//delete[] users;
-			//delete[] paidUsers;
+			//for (int i = 0; i < 8; i++)
+			//{
+			//	delete loginUsers[i];
+			//}
 			//delete loginUsers;
+
+			//for (int i = 0; i < 8; i++)
+			//{
+			//	delete& users[i];
+			//}
+			//delete[] users;
+			//for (int i = 0; i < 4; i++)
+			//{
+			//	delete& paidUsers[i];
+			//}
+			//delete[] paidUsers;
+			//for (int i = 0; i < 4; i++)
+			//{
+			//	checkLoginUsers[i];
+			//}
 			//delete checkLoginUsers;
 
 		} break;

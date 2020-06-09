@@ -139,7 +139,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Authorization.cpp" />
     <ClCompile Include="CertificateDiscount.cpp" />
     <ClCompile Include="CheckInput.cpp" />
     <ClCompile Include="DiscountBase.cpp" />
@@ -154,7 +153,6 @@
     <ClCompile Include="User.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Authorization.h" />
     <ClInclude Include="CategoryType.h" />
     <ClInclude Include="CertificateDiscount.h" />
     <ClInclude Include="CheckInput.h" />
@@ -167,6 +165,9 @@
     <ClInclude Include="Student.h" />
     <ClInclude Include="Teacher.h" />
     <ClInclude Include="User.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

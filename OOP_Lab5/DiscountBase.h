@@ -10,6 +10,6 @@ public:
 	CategoryType GetCategory();
 
 	virtual double Calculate(Product* product) =0;
-
+protected:
 	DiscountBase(CategoryType category);
 };
