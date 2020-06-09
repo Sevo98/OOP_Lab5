@@ -9,6 +9,8 @@
 #include "DiscountBase.h"
 #include "PercentDiscount.h"
 #include "CertificateDiscount.h"
+#include "UniformDistanceCalculator.h"
+#include "AcceleratedDistanceCalculator.h"
 using namespace std;
 
 void ShowName(Person* person);
@@ -26,6 +28,7 @@ int main()
 		cout << "1. Наследование" << endl;
 		cout << "2. Рефакторинг с выделением базового класса" << endl;
 		cout << "3. Полиморфизм" << endl;
+		cout << "4. Индивидуальное задание" << endl;
 		CheckInput::CheckInputInt(&number);
 		switch (number)
 		{
@@ -64,8 +67,8 @@ int main()
 					loginUsers[i]= &users[i];
 				}
 
-			string login = "RazorQ";  
-			string password = "TBgRnbCP";
+			string login = "Razor";  
+			string password = "TBgRnbP";
 
 			for (int i = 0; i < 8; i++)
 			{
@@ -132,7 +135,7 @@ int main()
 
 		//Полиморфизм
 		case 3:
-			{
+		{
 			const int productsCount = 4;
 			Product products[productsCount];
 			products[0] = Product("Курица", 250, meat);
@@ -147,12 +150,45 @@ int main()
 			arrDiscounts[0] = percentDicsount;
 			arrDiscounts[1] = certificate;
 
-			ShowCheckWithDiscount(arrDiscounts[1], products, productsCount);
+
+			ShowCheckWithDiscount(arrDiscounts[0], products, productsCount);
 
 			/*delete percentDicsount;
 			delete certificate;
 			delete[] arrDiscounts;*/
+		} break;
+		//Индивидуальное задание
+		case 4:
+		{
+			system("cls");
+			while (true)
+			{
+				int selectCalc = 0;
+				cout << "Введите от 1 до 4" << endl;
+				cout << "1. Расчет расстояния для равномерного движения" << endl;
+				cout << "2. Расчет расстояния для равноускоренного движения" << endl;
+				CheckInput::CheckInputInt(&selectCalc);
+				switch (selectCalc)
+				{
+				case 1: 
+				{
+					double speed, time;
+					cout << "Введите скорость: ";
+					CheckInput::CheckInputDouble(&speed);
+					cout << "Введите время: ";
+					CheckInput::CheckInputDouble(&time);
+					UniformDistanceCalculator calculator = UniformDistanceCalculator(speed);
+					cout << "Расстояние, пройденное за " << time << ": " << calculator.Calculate(time) << endl;
+				} break;
+
+				case 2:
+				{
+					AcceleratedDistanceCalculator calculator = AcceleratedDistanceCalculator(60.0, 1.5);
+					cout << "Расстояние, пройденное за 10 минут:" << calculator.Calculate(10) << endl;
+				} break;
+				}
 			}
+		} break;
 		}
 	}
 	

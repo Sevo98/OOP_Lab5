@@ -139,9 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AcceleratedDistanceCalculator.cpp" />
     <ClCompile Include="CertificateDiscount.cpp" />
     <ClCompile Include="CheckInput.cpp" />
     <ClCompile Include="DiscountBase.cpp" />
+    <ClCompile Include="DistanceCalculatorBase.cpp" />
     <ClCompile Include="OOP_Lab5.cpp" />
     <ClCompile Include="PaidUser.cpp" />
     <ClCompile Include="PercentDiscount.cpp" />
@@ -150,13 +152,16 @@
     <ClCompile Include="Product.cpp" />
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="Teacher.cpp" />
+    <ClCompile Include="UniformDistanceCalculator.cpp" />
     <ClCompile Include="User.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AcceleratedDistanceCalculator.h" />
     <ClInclude Include="CategoryType.h" />
     <ClInclude Include="CertificateDiscount.h" />
     <ClInclude Include="CheckInput.h" />
     <ClInclude Include="DiscountBase.h" />
+    <ClInclude Include="DistanceCalculatorBase.h" />
     <ClInclude Include="PaidUser.h" />
     <ClInclude Include="PercentDiscount.h" />
     <ClInclude Include="Person.h" />
@@ -164,6 +169,7 @@
     <ClInclude Include="Product.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="Teacher.h" />
+    <ClInclude Include="UniformDistanceCalculator.h" />
     <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>
